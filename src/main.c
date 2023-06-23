@@ -13,8 +13,8 @@
 
 int main(int argc, char const *argv[])
 {
-    char line[152];
-    char c;
+    char line[46];
+    char c = "";
 
     int x = 0;
     int y = 0;
@@ -30,30 +30,25 @@ int main(int argc, char const *argv[])
 
     while(fgets(line, sizeof(line), fp) != NULL) { /* read a line from a file */
 
-    	if (EQUALS(line, "nekomark\n")) {
-        	clg();
-
-    		//printf("NEKO");
-
+    	if (EQUALS(line, "*\n")) {
+        	//clg();
+    		msleep(100);
     		y = 0;
     	}
-		for (x = 0; x < 151; x++) {
-			c = line[x];
+    	else {
+			for (x = 0; x < 45; x++) {
+				c = line[x];
+				// printf("char = %s\n ", c+64);
 
-			if (EQUALS(c, '.')) {
-//				circle(x*3,  y*4, 2, true);
-				//circle(x,  y, 1, true);
-//				point(x, y);
-				//circle(x*3, y*3, 3, true);
+				if ((c == '1')) {
+					unplot((x * 6) + 25, (y * 6) + 25);
+				}
+				else if ((c == '0')) {
+					plot((x * 6) + 25, (y * 6) + 25);
+				}
 			}
-			else if (EQUALS(c, '@')) {
-				// point(x, y);
-				circle(x*3,  y*4, 2, false);
-//				drawr(x, y);
-//				circle(x, y, 1, false);
-			}
-		}
-    	y++;
+			y++;
+    	}
     }
 
 	fclose(fp);
