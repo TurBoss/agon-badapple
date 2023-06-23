@@ -31,8 +31,8 @@ int main(int argc, char const *argv[])
     while(fgets(line, sizeof(line), fp) != NULL) { /* read a line from a file */
 
     	if (EQUALS(line, "*\n")) {
-        	//clg();
-    		msleep(100);
+        	// clg();
+    		// msleep();
     		y = 0;
     	}
     	else {
