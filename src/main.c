@@ -6,25 +6,39 @@
 #include <time.h>
 #include <fcntl.h>
 #include <unistd.h>
-
 #include <graphics.h>
+
+
+
+#define OFFSET_X 25
+#define OFFSET_Y 25
+
+#define SPACE_X 8
+#define SPACE_Y 8
+
 
 #define EQUALS(x, y) (strcmp(x, y) == 0)
 
+
 int main(int argc, char const *argv[])
 {
-    char line[46];
-    char c = "";
+
+//	int screen_w = getmaxx();
+//	int screen_h = getmaxy();
+//
+//	printf("%d %d", screen_w, screen_h);
 
     int x = 0;
     int y = 0;
 
 	char *file_path = "badapple.txt";
+	char line[46];
+    char c = "";
 
 	FILE *fp= fopen(file_path, "r");
 
 	if ( fp == NULL ) {
-        printf("Can't open output text format file %s\n",file_path);
+        printf("Can't open file %s\n",file_path);
         return 1;
     }
 
@@ -40,10 +54,10 @@ int main(int argc, char const *argv[])
 				c = line[x];
 
 				if ((c == '1')) {
-					unplot((x * 6) + 25, (y * 6) + 25);
+					unplot((x * SPACE_X) + OFFSET_X, (y * SPACE_Y) + OFFSET_Y);
 				}
 				else if ((c == '0')) {
-					plot((x * 6) + 25, (y * 6) + 25);
+					plot((x * SPACE_X) + OFFSET_X, (y * SPACE_Y) + OFFSET_Y);
 				}
 			}
 			y++;

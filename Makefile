@@ -2,7 +2,7 @@ SRC=src/main.c
 
 CC=zcc
 
-CFLAGS=+agon -DAMALLOC -Wall -Wextra
+CFLAGS=+agon
 LDFLAGS=-lm
 
 all: a.bin
