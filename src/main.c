@@ -38,7 +38,6 @@ int main(int argc, char const *argv[])
     	else {
 			for (x = 0; x < 45; x++) {
 				c = line[x];
-				// printf("char = %s\n ", c+64);
 
 				if ((c == '1')) {
 					unplot((x * 6) + 25, (y * 6) + 25);
