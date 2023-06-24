@@ -2,12 +2,12 @@
 #include <stdlib.h>
 #include <stdbool.h>
 #include <stdint.h>
-#include <string.h>
-#include <time.h>
-#include <fcntl.h>
-#include <unistd.h>
-#include <graphics.h>
+//#include <string.h>
+//#include <time.h>
+//#include <fcntl.h>
+//#include <unistd.h>
 
+#include <graphics.h>
 
 
 #define OFFSET_X 25
@@ -44,7 +44,7 @@ int main(int argc, char const *argv[])
 
     while(fgets(line, sizeof(line), fp) != NULL) { /* read a line from a file */
 
-    	if (EQUALS(line, "*\n")) {
+    	if (line[0] == '*') {
         	// clg();
     		// msleep();
     		y = 0;
