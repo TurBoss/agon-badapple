@@ -12,15 +12,17 @@ LOAD badapple.bin
 RUN
 ```
 
-runs very slow. for now...
-
 
 LINKS:
 
 Agon Light https://github.com/TheByteAttic/AgonLight
+
+
 z88dk https://github.com/z88dk/z88dk
 
 
+
 References:
+
 
 https://github.com/kisekied/BadAppleStringAnimation

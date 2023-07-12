@@ -2,7 +2,7 @@ SRC=src/main.c
 
 CC=zcc
 
-CFLAGS=+agon -pragma-define:CRT_ENABLE_COMMANDLINE=1 -pragma-define:CLIB_DEFAULT_SCREEN_MODE=2
+CFLAGS=+agon -pragma-define:CRT_ENABLE_COMMANDLINE=0 -pragma-define:CLIB_DEFAULT_SCREEN_MODE=2
 
 
 all: a.bin
